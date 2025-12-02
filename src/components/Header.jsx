@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 
-const Header = memo(({ userid, onLogout, onMyPost, onAllPosts }) => {
+const Header = memo(({ userid, onLogout, onMyPosts, onAllPosts }) => {
   return (
     <header className="header">
       <div className="logo">
@@ -11,7 +11,7 @@ const Header = memo(({ userid, onLogout, onMyPost, onAllPosts }) => {
       {userid && (
         <nav className="menu">
           <button onClick={onAllPosts}>All Posts</button>
-          <button onClick={onMyPost}>My Posts</button>
+          <button onClick={onMyPosts}>My Posts</button>
           <button className="menu-item" onClick={onLogout}>
             Logout
           </button>

@@ -27,13 +27,13 @@ export function AuthProvider({ authService, authErrorEventBus, children }) {
     });
   }, [authErrorEventBus]);
   // 새로고침 또는 내 정보 요청시 로그인 유지 확인
-  //   useEffect(() => {
-  //     authService.me().then(setUser).catch(console.error);
-  //   }, [authService]);
+  useEffect(() => {
+    authService.me().then(setUser).catch(console.error);
+  }, [authService]);
   const signUp = useCallback(
     async (userid, password, name, email, url) =>
       authService
-        .signup(userid, password, name, email, url)
+        .signUp(userid, password, name, email, url)
         .then((user) => setUser(user)),
     [authService]
   );
